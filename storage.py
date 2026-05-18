@@ -11,6 +11,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+os.environ["HF_HOME"] = os.getenv("HF_HOME", "./hf_cache")
+
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./healio.db")
 VECTOR_DB_PATH = os.getenv("VECTOR_DB_PATH", "./chroma_db")
 EMBEDDING_MODEL_NAME = os.getenv("EMBEDDING_MODEL_NAME", "all-MiniLM-L6-v2")
